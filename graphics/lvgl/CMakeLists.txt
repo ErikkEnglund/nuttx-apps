@@ -75,7 +75,7 @@ if(CONFIG_GRAPHICS_LVGL)
   target_include_directories(lvgl PRIVATE ${LVGL_DIR})
   target_compile_options(lvgl PRIVATE -Wno-shadow)
 
-  if(NOT CONFIG_LV_ASSERT_HANDLER_INCLUDE STREQUAL "")
+  if(CONFIG_LV_ASSERT_USE_CUSTOM_INCLUDE)
     target_compile_definitions(lvgl PRIVATE "LV_ASSERT_HANDLER=ASSERT(0)\;")
   endif()
 

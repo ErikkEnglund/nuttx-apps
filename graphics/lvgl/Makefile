@@ -29,7 +29,7 @@ LVGL_DIR_NAME = lvgl
 
 -include ./lvgl/lvgl.mk
 
-ifneq ($(CONFIG_LV_ASSERT_HANDLER_INCLUDE), "")
+ifeq ($(CONFIG_LV_ASSERT_USE_CUSTOM_INCLUDE),y)
 CFLAGS += "-DLV_ASSERT_HANDLER=ASSERT(0);"
 endif
 
